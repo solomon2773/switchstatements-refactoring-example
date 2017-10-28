@@ -9,7 +9,7 @@ namespace switchstatements;
 
 class GetResultsRefactorStateStrategyType
 {
-    public function GetResults($type="SearchResults")
+    public function GetResults($type=0)
     {
         $results = null;
         $searchResultClass = new SearchResultList();
@@ -19,16 +19,16 @@ class GetResultsRefactorStateStrategyType
         $christmaslistResultClass = new ChristmasResultList();
         switch ($type)
         {
-            case "SearchResults":
+            case 0:
                 $results = $searchResultClass->GetSearchResults();
             break;
-            case "Favorites":
+            case 1:
                 $results = $favoriteResultClass->GetFavoriteResults();
             break;
-            case "WishList":
+            case 2:
                 $results = $wishlistResultClass->getWishlistResults();
             break;
-            case "ChristmasList":
+            case 3:
                 $results = $christmaslistResultClass->getChristmasResults();
             break;
         }
